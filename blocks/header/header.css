@@ -1,0 +1,19 @@
+.header {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 45px 27px 0;
+
+  position: relative;
+}
+
+/* header::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -41px;
+  width: 100%;
+  height: 2px;
+
+  background-color: #545454;
+} */
