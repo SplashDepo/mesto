@@ -1,0 +1,13 @@
+.add-button {
+  padding: 12px 62px;
+  border: 2px solid #fff;
+  border-radius: 2px;
+
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+.add-button:hover {
+  opacity: 0.6;
+}
