@@ -21,3 +21,5 @@
 @import url(blocks/card/__title/card__title.css);
 @import url(blocks/card/__button/card__button.css);
 @import url(blocks/card/__icon/card__icon.css);
+@import url(blocks/footer/footer.css);
+@import url(blocks/footer/__project-name/footer__project-name.css);
