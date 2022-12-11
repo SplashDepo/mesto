@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
+  <script src="index.js" defer></script>
   <title>Mesto</title>
 </head>
 <body class="page">
@@ -98,5 +99,18 @@
   <footer class="footer">
     <p class="footer__project-name">&#169; 2020 Mesto Russia</p>
   </footer>
+  <div class="popup">
+    <form class="form popup__content">
+      <fieldset class="form__group">
+        <legend class="form__title">Редактировать профиль</legend>
+        <input class="form__input-name" type="text">
+        <input class="form__input-description" type="text">
+        <button class="form__close-button">
+          <img class="form__close-icon" src="images/close-icon.svg" alt="Кнопка закрыть">
+        </button>
+        <button class="form__submit-button" type="submit">Сохранить</button>
+      </fieldset>
+    </form>
+  </div>
 </body>
 </html>
