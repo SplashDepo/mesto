@@ -25,7 +25,6 @@
 @import url(blocks/footer/__project-name/footer__project-name.css);
 @import url(blocks/popup/popup.css);
 @import url(blocks/popup/_active/popup_active.css);
-@import url(blocks/popup/__content/popup__content.css);
 @import url(blocks/form/form.css);
 @import url(blocks/form/__group/form__group.css);
 @import url(blocks/form/__title/form__title.css);
