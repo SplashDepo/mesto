@@ -6,14 +6,8 @@
   position: relative;
 }
 
-/* header::after {
-  content: "";
-
-  position: absolute;
-  left: 0;
-  bottom: -41px;
-  width: 100%;
-  height: 2px;
-
-  background-color: #545454;
-} */
+@media screen and (max-width: 445px) {
+  .header {
+    padding: 28px 0 0;
+  }
+}

@@ -12,3 +12,10 @@
 .form__close-button:hover {
   opacity: 0.6;
 }
+
+@media screen and (max-width: 445px) {
+  .form__close-button {
+    top: -40px;
+    right: 0;
+  }
+}

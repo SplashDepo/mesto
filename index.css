@@ -32,4 +32,5 @@
 @import url(blocks/form/__input-name/form__input-name.css);
 @import url(blocks/form/__input-description/form__input-description.css);
 @import url(blocks/form/__close-button/form__close-button.css);
+@import url(blocks/form/__close-icon/form__close-icon.css);
 @import url(blocks/form/__submit-button/form__submit-button.css);
