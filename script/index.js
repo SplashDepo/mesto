@@ -1,9 +1,9 @@
 const popupOpenBtn = document.querySelector('.profile__button')
 const popup = document.querySelector('.popup')
-const popupCloseBtn = document.querySelector('.form__close-button')
-const form = document.querySelector('.form')
-const formInputName = document.querySelector('.form__input-name')
-const formInputDescription = document.querySelector('.form__input-description')
+const popupCloseBtn = document.querySelector('.popup__close-button')
+const form = document.querySelector('.popup__form')
+const formInputName = document.querySelector('.popup__input_type_name')
+const formInputDescription = document.querySelector('.popup__input_type_description')
 
 function handleFormSubmit(e) {
   e.preventDefault();
@@ -25,12 +25,10 @@ function openPopup() {
 }
 
 function closePopup(e) {
-  if (e.target === e.currentTarget || e.target === popupCloseBtn) {
-    popup.classList.remove('popup_active')
-  }
+  popup.classList.remove('popup_active')
 }
 
 
 popupOpenBtn.addEventListener('click', openPopup)
-popup.addEventListener('click', closePopup)
+popupCloseBtn.addEventListener('click', closePopup)
 form.addEventListener('submit', handleFormSubmit)
