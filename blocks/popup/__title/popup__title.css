@@ -1,7 +1,7 @@
-.form__title {
-  margin-bottom: 54px;
+.popup__title {
+  margin-bottom: 50px;
 
-  font-family: 'Inter', Helvetica, sans-serif;
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 900;
   font-size: 24px;
@@ -9,8 +9,10 @@
 }
 
 @media screen and (max-width: 445px) {
-  .form__title {
+  .popup__title {
     font-size: 18px;
     line-height: 22px;
+
+    margin-bottom: 75px;
   }
 }

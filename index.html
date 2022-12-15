@@ -75,17 +75,17 @@
     <p class="footer__project-name">&#169; 2020 Mesto Russia</p>
   </footer>
   <div class="popup">
-    <form class="form">
-      <fieldset class="form__group">
-        <legend class="form__title">Редактировать профиль</legend>
-        <input class="form__input-name" type="text">
-        <input class="form__input-description" type="text">
-        <button class="form__close-button" type="button">
-          <img class="form__close-icon" src="images/icons/close-icon.svg" alt="Кнопка закрыть">
-        </button>
-        <button class="form__submit-button" type="submit">Сохранить</button>
-      </fieldset>
-    </form>
+    <div class="popup__container">
+      <button class="popup__close-button" type="button">
+        <img class="popup__close-icon" src="images/icons/close-icon.svg" alt="Кнопка закрыть">
+      </button>
+      <form class="popup__form" name="profile-form">
+        <legend class="popup__title">Редактировать профиль</legend>
+        <input class="popup__input popup__input_type_name" name="input-name" type="text">
+        <input class="popup__input popup__input_type_description" name="input-description" type="text">
+        <button class="popup__submit-button" type="submit">Сохранить</button>
+      </form>
+    </div>
   </div>
 </body>
 </html>
