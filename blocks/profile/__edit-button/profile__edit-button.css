@@ -1,8 +1,8 @@
-.profile__button {
-  padding: 7px;
-  margin-left: 25px;
-  border: 2px solid #fff;
-  border-radius: 2px;
+.profile__edit-button {
+  padding: 6px;
+  margin-left: 18.5px;
+  margin-top: 7px;
+  border: 1px solid #fff;
 
   vertical-align: text-bottom;
 
@@ -11,15 +11,16 @@
   cursor: pointer;
 }
 
-.profile__button:hover {
+.profile__edit-button:hover {
   opacity: 0.6;
 }
 
 @media screen and (max-width: 445px) {
-  .profile__button {
-    padding: 5px;
+  .profile__edit-button {
     margin-left: 5px;
+    margin-top: 0;
+    padding: 5px;
+
     border: 1px solid #fff;
   }
-
 }
