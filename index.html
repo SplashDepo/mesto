@@ -28,7 +28,17 @@
       </button>
     </section>
     <section class="gallery">
-      <div class="card">
+      <template id="card-template">
+        <div class="card">
+          <img class="card__image" src="" alt="картинка из карточки">
+          <div class="card__description">
+            <h2 class="card__title"></h2>
+            <button class="card__like-button" type="button"></button>
+          </div>
+          <button class="card__delete-button" type="button"></button>
+        </div>
+      </template>
+      <!-- <div class="card">
         <img class="card__image" src="images/card-img1.jpg" alt="Карачаевск">
         <div class="card__description">
           <h2 class="card__title">Карачаевск</h2>
@@ -69,7 +79,7 @@
           <h2 class="card__title">КарачаевскsDASDADASDADASDAeaadasdadada</h2>
           <button class="card__button" type="button"></button>
         </div>
-      </div>
+      </div> -->
     </section>
   </main>
   <footer class="footer">
