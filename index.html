@@ -30,7 +30,7 @@
     <section class="gallery">
       <template id="card-template">
         <div class="card">
-          <img class="card__image" src="" alt="картинка из карточки">
+          <img class="card__image" src="#" alt="картинка из карточки">
           <div class="card__description">
             <h2 class="card__title"></h2>
             <button class="card__like-button" type="button"></button>
@@ -85,7 +85,7 @@
   <footer class="footer">
     <p class="footer__project-name">&#169; 2020 Mesto Russia</p>
   </footer>
-  <div class="popup">
+  <div class="popup popup_type_edit">
     <div class="popup__container">
       <button class="popup__close-button" type="button">
         <img class="popup__close-icon" src="images/icons/close-icon.svg" alt="Кнопка закрыть">
@@ -96,6 +96,28 @@
         <input class="popup__input popup__input_type_description" name="input-description" type="text">
         <button class="popup__submit-button" type="submit">Сохранить</button>
       </form>
+    </div>
+  </div>
+  <div class="popup popup_type_new-card">
+    <div class="popup__container">
+      <button class="popup__close-button" type="button">
+        <img class="popup__close-icon" src="images/icons/close-icon.svg" alt="Кнопка закрыть">
+      </button>
+      <form class="popup__form" name="card-form">
+        <h2 class="popup__title">Новое место</h2>
+        <input class="popup__input popup__input_type_name" name="input-title" type="text">
+        <input class="popup__input popup__input_type_description" name="input-link" type="text">
+        <button class="popup__submit-button" type="submit">Создать</button>
+      </form>
+    </div>
+  </div>
+  <div class="popup popup_type_image">
+    <div class="popup__image-container">
+      <button class="popup__close-button" type="button">
+        <img class="popup__close-icon" src="images/icons/close-icon.svg" alt="Кнопка закрыть">
+      </button>
+      <img class="popup__image" src="images/card-img1.jpg" alt="#">
+      <p class="popup__description"></p>
     </div>
   </div>
   <script src="script/index.js"></script>
