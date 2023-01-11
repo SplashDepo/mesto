@@ -83,7 +83,10 @@ const profileDescription = document.querySelector('.profile__description')
 
 function openPopup(popupType) {
   popupType.classList.add('popup_active')
+}
 
+function addDefaultPopupValue(popupType) {
+  openPopup(popupType)
   editInputName.value = profileName.textContent
   editInputDescription.value = profileDescription.textContent
 }
@@ -114,6 +117,7 @@ function createCard(title, image) {
 
   const cardImage = card.querySelector('.card__image')
   cardImage.src = image
+  cardImage.alt = title
   cardImage.addEventListener('click', viewPhoto)
 
 
@@ -127,6 +131,7 @@ function createCard(title, image) {
 function viewPhoto(e) {
   openPopup(imagePopup)
   imagePopupPhoto.src = e.target.src
+  imagePopupPhoto.alt = e.target
   imagePopupDescription.textContent = e.target.nextElementSibling.textContent
 }
 
@@ -161,7 +166,7 @@ function renderUserCards(e) {
 
 renderDefaultCards(initialCards)
 
-editPopupOpenBtn.addEventListener('click', () => openPopup(editProfilePopup))
+editPopupOpenBtn.addEventListener('click', () => addDefaultPopupValue(editProfilePopup))
 editPopupCloseBtn.addEventListener('click', () => closePopup(editProfilePopup))
 editProfilePopup.addEventListener('submit', handleFormSubmit)
 
