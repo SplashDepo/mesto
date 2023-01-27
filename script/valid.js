@@ -7,8 +7,8 @@ const settingsList = {
   errorClass: 'popup__error_visible'
 }
 
-function enableValidation() {
-  const formList = Array.from(document.querySelectorAll(settingsList.formSelector))
+function enableValidation(settingsObj) {
+  const formList = Array.from(document.querySelectorAll(settingsObj.formSelector))
   formList.forEach(formElement => {
     formElement.addEventListener('submit', e => {
       e.preventDefault()
@@ -21,8 +21,32 @@ function enableValidation() {
 function setEventListener(formElement) {
   const inputList = Array.from(formElement.querySelectorAll(settingsList.inputSelector))
   inputList.forEach(inputElement => {
-    inputElement.addEventListener('input', () => checkValidity(formElement, inputElement))
+    inputElement.addEventListener('input', function () {
+      checkValidity(formElement, inputElement)
+    })
   })
 }
 
+function checkValidity(formElement, inputElement) {
+  if (!inputElement.validity.valid) {
+    showInputError(formElement, inputElement, inputElement.validationMessage)
+  } else {
+    hideInputError(formElement, inputElement)
+  }
+}
 
+function showInputError(formElement, inputElement, errorMess) {
+  const errorElement = formElement.querySelector(`.${inputElement.id}-error`)
+  errorElement.textContent = errorMess
+  inputElement.classList.add(settingsList.inputErrorClass)
+  errorElement.classList.add(settingsList.errorClass)
+}
+
+function hideInputError(formElement, inputElement) {
+  const errorElement = formElement.querySelector(`.${inputElement.id}-error`)
+  errorElement.textContent = ""
+  inputElement.classList.remove(settingsList.inputErrorClass)
+  errorElement.classList.remove(settingsList.errorClass)
+}
+
+enableValidation(settingsList)

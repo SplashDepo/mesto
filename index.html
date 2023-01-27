@@ -69,7 +69,8 @@
              alt="Кнопка закрыть">
       </button>
       <form class="popup__form"
-            name="profile-form">
+            name="profile-form"
+            novalidate>
         <h2 class="popup__title">Редактировать профиль</h2>
         <input class="popup__input popup__input_type_name"
                id="input-name"
@@ -78,7 +79,7 @@
                minlength="2"
                maxlength="40"
                required>
-        <span class="input-name-error">jib,rf</span>
+        <span class="input-name-error"></span>
         <input class="popup__input popup__input_type_description"
                id="input-description"
                name="input-description"
@@ -86,7 +87,7 @@
                minlength="2"
                maxlength="200"
                required>
-        <span class="input-description-error">jib,rf</span>
+        <span class="input-description-error"></span>
         <button class="popup__submit-button"
                 type="submit">Сохранить</button>
       </form>
@@ -101,18 +102,25 @@
              alt="Кнопка закрыть">
       </button>
       <form class="popup__form"
-            name="card-form">
+            name="card-form"
+            novalidate>
         <h2 class="popup__title">Новое место</h2>
         <input class="popup__input popup__input_type_name"
+               id="input-name"
                name="input-title"
                type="text"
                placeholder="Название"
+               minlength="2"
+               maxlength="30"
                required>
+        <span class="input-name-error"></span>
         <input class="popup__input popup__input_type_description"
+               id="input-description"
                name="input-link"
                type="url"
                placeholder="Ссылка на картинку"
                required>
+        <span class="input-description-error"></span>
         <button class="popup__submit-button"
                 type="submit">Создать</button>
       </form>
@@ -133,5 +141,6 @@
     </div>
   </div>
   <script src="script/index.js"></script>
+  <script src="script/valid.js"> </script>
 </body>
 </html>
