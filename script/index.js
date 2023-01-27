@@ -124,15 +124,13 @@ function createCard(title, image) {
   card.querySelector('.card__delete-button').addEventListener('click', deleteCard)
   card.querySelector('.card__like-button').addEventListener('click', likeCard)
 
+  function viewPhoto(e) {
+    openPopup(imagePopup)
+    imagePopupPhoto.src = e.target.src
+    imagePopupDescription.textContent = cardTitel.textContent
+  }
 
   return card
-}
-
-function viewPhoto(e) {
-  openPopup(imagePopup)
-  imagePopupPhoto.src = e.target.src
-  imagePopupPhoto.alt = e.target
-  imagePopupDescription.textContent = e.target.nextElementSibling.textContent
 }
 
 function deleteCard(e) {
