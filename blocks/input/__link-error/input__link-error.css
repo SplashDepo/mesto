@@ -1,6 +1,5 @@
-.input-name-error {
+.input__link-error {
   box-sizing: border-box;
-  margin-bottom: 25px;
-
+  padding-top: 5px;
   min-height: 30px;
 }

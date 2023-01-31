@@ -32,6 +32,10 @@
 @import url(../blocks/popup/__form/popup__form.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__input/popup__input.css);
+@import url(../blocks/input/__link-error/input__link-error.css);
+@import url(../blocks/input/__description-error/input__description-error.css);
+@import url(../blocks/input/__name-error/input__name-error.css);
+@import url(../blocks/input/__title-error/input__title-error.css);
 @import url(../blocks/popup/__input/_type/popup__input_type_error.css);
 @import url(../blocks/popup/__error/_visible/popup__error_visible.css);
 @import url(../blocks/popup/__image/popup__image.css);

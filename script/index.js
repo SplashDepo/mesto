@@ -1,35 +1,8 @@
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
-const editProfilePopup = document.querySelector('.popup_type_edit')
-const editPopupOpenBtn = document.querySelector('.profile__edit-button')
-const editPopupCloseBtn = editProfilePopup.querySelector('.popup__close-button')
-const editInputName = editProfilePopup.querySelector('.popup__input_type_name')
-const editInputDescription = editProfilePopup.querySelector('.popup__input_type_description')
+const profileEditPopup = document.querySelector('.popup_type_edit')
+const btnOpenEditPopup = document.querySelector('.profile__edit-button')
+const btnCloseEditPopup = profileEditPopup.querySelector('.popup__close-button')
+const nameEditInput = profileEditPopup.querySelector('.popup__input_type_name')
+const descriptionEditInput = profileEditPopup.querySelector('.popup__input_type_description')
 
 const cardPopup = document.querySelector('.popup_type_new-card')
 const cardPopupOpenBtn = document.querySelector('.profile__add-button')
@@ -75,17 +48,17 @@ function closePopup(popupType) {
 
 function addDefaultPopupValue(popupType) {
   openPopup(popupType)
-  editInputName.value = profileName.textContent
-  editInputDescription.value = profileDescription.textContent
+  nameEditInput.value = profileName.textContent
+  descriptionEditInput.value = profileDescription.textContent
 }
 
 function handleFormSubmit(e) {
   e.preventDefault();
 
-  profileName.textContent = editInputName.value
-  profileDescription.textContent = editInputDescription.value
+  profileName.textContent = nameEditInput.value
+  profileDescription.textContent = descriptionEditInput.value
 
-  closePopup(editProfilePopup)
+  closePopup(profileEditPopup)
 }
 
 const cardsContainer = document.querySelector('.gallery')
@@ -111,6 +84,7 @@ function createCard(title, image) {
   function viewPhoto(e) {
     openPopup(imagePopup)
     imagePopupPhoto.src = e.target.src
+    imagePopupPhoto.alt = title
     imagePopupDescription.textContent = cardTitel.textContent
   }
 
@@ -148,9 +122,9 @@ function renderUserCards(e) {
 
 renderDefaultCards(initialCards)
 
-editPopupOpenBtn.addEventListener('click', () => addDefaultPopupValue(editProfilePopup))
-editPopupCloseBtn.addEventListener('click', () => closePopup(editProfilePopup))
-editProfilePopup.addEventListener('submit', handleFormSubmit)
+btnOpenEditPopup.addEventListener('click', () => addDefaultPopupValue(profileEditPopup))
+btnCloseEditPopup.addEventListener('click', () => closePopup(profileEditPopup))
+profileEditPopup.addEventListener('submit', handleFormSubmit)
 
 cardPopupOpenBtn.addEventListener('click', () => openPopup(cardPopup))
 cardPopupCloseBtn.addEventListener('click', () => closePopup(cardPopup))
