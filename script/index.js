@@ -8,6 +8,7 @@ const cardPopup = document.querySelector('.popup_type_new-card')
 const cardPopupOpenBtn = document.querySelector('.profile__add-button')
 const cardPopupCloseBtn = cardPopup.querySelector('.popup__close-button')
 const cardPopupForm = cardPopup.querySelector('.popup__form')
+const cardPopupSubmitBtn = cardPopup.querySelector('.popup__submit-button')
 const cardInputName = cardPopup.querySelector('.popup__input_type_name')
 const cardInputDescription = cardPopup.querySelector('.popup__input_type_description')
 
@@ -21,10 +22,10 @@ const profileDescription = document.querySelector('.profile__description')
 
 const popupList = Array.from(document.querySelectorAll('.popup'))
 
-popupList.forEach(el => {
-  el.addEventListener('click', e => {
+popupList.forEach(popupItem => {
+  popupItem.addEventListener('click', e => {
     if (e.target.classList.contains('popup_active')) {
-      closePopup(el)
+      closePopup(popupItem)
     }
   })
 })
@@ -44,6 +45,7 @@ function openPopup(popupType) {
 
 function closePopup(popupType) {
   popupType.classList.remove('popup_active')
+  document.removeEventListener('keydown', closePopupPressEsc);
 }
 
 function addDefaultPopupValue(popupType) {
@@ -116,6 +118,9 @@ function renderUserCards(e) {
   addCard(userCardHtml)
 
   cardPopupForm.reset()
+
+  cardPopupSubmitBtn.classList.add('popup__button_disabled')
+  cardPopupSubmitBtn.setAttribute('disabled', true)
 
   closePopup(cardPopup)
 }

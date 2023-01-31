@@ -10,10 +10,6 @@ const settingsList = {
 function enableValidation(settingsObj) {
   const formList = Array.from(document.querySelectorAll(settingsObj.formSelector))
   formList.forEach(formElement => {
-    formElement.addEventListener('submit', e => {
-      e.preventDefault()
-    })
-
     setEventListener(formElement)
   })
 }
@@ -41,9 +37,9 @@ function checkValidity(formElement, inputElement) {
   }
 }
 
-function showInputError(formElement, inputElement, errorMess) {
+function showInputError(formElement, inputElement, errorMessage) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`)
-  errorElement.textContent = errorMess
+  errorElement.textContent = errorMessage
   inputElement.classList.add(settingsList.inputErrorClass)
   errorElement.classList.add(settingsList.errorClass)
 }
@@ -56,6 +52,7 @@ function hideInputError(formElement, inputElement) {
 }
 
 function toggleButtonState(inputList, buttonElement) {
+
   if (hasInvalidInput(inputList)) {
     buttonElement.classList.add(settingsList.inactiveButtonClass)
     buttonElement.setAttribute("disabled", true);
