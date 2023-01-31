@@ -50,12 +50,12 @@
       </button>
       <form class="popup__form" name="profile-form" novalidate>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <input class="popup__input popup__input_type_name" id="input__name" name="input-name" type="text" minlength="2"
+        <input class="popup__input popup__input_type_name" id="input-name" name="input-name" type="text" minlength="2"
           maxlength="40" required>
-        <span class="input__name-error"></span>
-        <input class="popup__input popup__input_type_description" id="input__description" name="input-description"
+        <span class="input-name-error popup__error"></span>
+        <input class="popup__input popup__input_type_description" id="input-description" name="input-description"
           type="text" minlength="2" maxlength="200" required>
-        <span class="input__description-error"></span>
+        <span class="input-description-error popup__error"></span>
         <button class="popup__submit-button" type="submit">Сохранить</button>
       </form>
     </div>
@@ -67,12 +67,12 @@
       </button>
       <form class="popup__form" name="card-form" novalidate>
         <h2 class="popup__title">Новое место</h2>
-        <input class="popup__input popup__input_type_name" id="input__title" name="input-title" type="text"
+        <input class="popup__input popup__input_type_name" id="input-title" name="input-title" type="text"
           placeholder="Название" minlength="2" maxlength="30" required>
-        <span class="input__title-error"></span>
-        <input class="popup__input popup__input_type_description" id="input__link" name="input-link" type="url"
+        <span class="input-title-error popup__error"></span>
+        <input class="popup__input popup__input_type_description" id="input-link" name="input-link" type="url"
           placeholder="Ссылка на картинку" required>
-        <span class="input__link-error"></span>
+        <span class="input-link-error popup__error"></span>
         <button class="popup__submit-button" type="submit">Создать</button>
       </form>
     </div>
