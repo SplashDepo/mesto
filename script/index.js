@@ -119,8 +119,7 @@ function renderUserCards(e) {
 
   cardPopupForm.reset()
 
-  cardPopupSubmitBtn.classList.add('popup__button_disabled')
-  cardPopupSubmitBtn.setAttribute('disabled', true)
+  addInvalidState(cardPopupSubmitBtn)
 
   closePopup(cardPopup)
 }

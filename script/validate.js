@@ -51,14 +51,22 @@ function hideInputError(formElement, inputElement) {
   errorElement.classList.remove(settingsList.errorClass)
 }
 
+function addInvalidState(buttonElement) {
+  buttonElement.classList.add(settingsList.inactiveButtonClass)
+  buttonElement.setAttribute("disabled", true);
+}
+
+function addValidState(buttonElement) {
+  buttonElement.classList.remove(settingsList.inactiveButtonClass)
+  buttonElement.removeAttribute("disabled");
+}
+
 function toggleButtonState(inputList, buttonElement) {
 
   if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add(settingsList.inactiveButtonClass)
-    buttonElement.setAttribute("disabled", true);
+    addInvalidState(buttonElement)
   } else {
-    buttonElement.classList.remove(settingsList.inactiveButtonClass)
-    buttonElement.removeAttribute("disabled");
+    addValidState(buttonElement)
   }
 }
 
