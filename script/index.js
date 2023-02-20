@@ -24,9 +24,15 @@ const profileDescription = document.querySelector('.profile__description')
 
 const cardsContainer = document.querySelector('.gallery')
 
-// const popupList = Array.from(document.querySelectorAll('.popup'))
+const popupList = Array.from(document.querySelectorAll('.popup'))
 
-
+popupList.forEach(popupItem => {
+  popupItem.addEventListener('mousedown', (evt) => {
+    if (evt.target.classList.contains('popup_active')) {
+      closePopup(popupItem);
+    }
+  });
+});
 
 
 
