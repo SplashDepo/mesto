@@ -1,6 +1,7 @@
 import { Card } from './card.js'
 import { initialCards, settingsList } from './settingsInfoList.js'
 import { FormValidator } from './FormValidator.js'
+import { openPopup, closePopupPressEsc, closePopup } from '../utils/utils.js'
 
 const profileEditPopup = document.querySelector('.popup_type_edit')
 const btnOpenEditPopup = document.querySelector('.profile__edit-button')
@@ -14,9 +15,7 @@ const cardPopupSubmitBtn = cardPopup.querySelector('.popup__submit-button')
 const cardInputName = cardPopup.querySelector('.popup__input_type_name')
 const cardInputDescription = cardPopup.querySelector('.popup__input_type_description')
 
-export const imagePopup = document.querySelector('.popup_type_image')
-export const imagePopupPhoto = imagePopup.querySelector('.popup__image')
-export const imagePopupDescription = imagePopup.querySelector('.popup__description')
+
 
 const popupCloseBtn = document.querySelectorAll('.popup__close-button')
 
@@ -25,25 +24,11 @@ const profileDescription = document.querySelector('.profile__description')
 
 const cardsContainer = document.querySelector('.gallery')
 
-const popupList = Array.from(document.querySelectorAll('.popup'))
+// const popupList = Array.from(document.querySelectorAll('.popup'))
 
-function closePopupPressEsc(e) {
-  if (e.key === "Escape") {
-    const openEl = document.querySelector('.popup_active')
-    closePopup(openEl)
-  }
 
-}
 
-export function openPopup(popupType) {
-  popupType.classList.add('popup_active')
-  document.addEventListener('keydown', closePopupPressEsc)
-}
 
-function closePopup(popupType) {
-  popupType.classList.remove('popup_active')
-  document.removeEventListener('keydown', closePopupPressEsc);
-}
 
 function addDefaultPopupValue(popupType) {
   openPopup(popupType)
@@ -51,7 +36,7 @@ function addDefaultPopupValue(popupType) {
   descriptionEditInput.value = profileDescription.textContent
 }
 
-function handleFormSubmit(e) {
+function submitEditProfileForm(e) {
   e.preventDefault();
 
   profileName.textContent = nameEditInput.value
@@ -60,8 +45,8 @@ function handleFormSubmit(e) {
   closePopup(profileEditPopup)
 }
 
-function renderCards(object, template) {
-  const card = new Card(object, template)
+function renderCards(cardData, template) {
+  const card = new Card(cardData, template)
   return card.generateCard()
 }
 
@@ -83,7 +68,8 @@ function renderUserCards(e) {
 
   closePopup(cardPopup)
   cardPopupSubmitBtn.setAttribute('disabled', 'true');
-  cardPopupSubmitBtn.classList.add(this._object.inactiveButtonClass);
+  cardPopupSubmitBtn.classList.add('popup__button_disabled');
+
 }
 
 renderDefaultCards()
@@ -99,7 +85,7 @@ btnOpenEditPopup.addEventListener('click', () => addDefaultPopupValue(profileEdi
 cardPopupOpenBtn.addEventListener('click', () => openPopup(cardPopup))
 
 cardPopup.addEventListener('submit', renderUserCards)
-profileEditPopup.addEventListener('submit', handleFormSubmit)
+profileEditPopup.addEventListener('submit', submitEditProfileForm)
 
 popupCloseBtn.forEach(btn => {
   const popup = btn.closest('.popup')

@@ -1,6 +1,6 @@
 class FormValidator {
-  constructor(objectList, validationElement) {
-    this._object = objectList
+  constructor(validationConfig, validationElement) {
+    this._object = validationConfig
     this._element = validationElement
     this._submitButton = this._element.querySelector(this._object.submitButtonSelector)
     this._inputList = Array.from(this._element.querySelectorAll(this._object.inputSelector))
@@ -48,10 +48,14 @@ class FormValidator {
     this._setEventListener()
   }
 
+  disableSubmitButton() {
+    this._submitButton.setAttribute('disabled', 'true');
+    this._submitButton.classList.add(this._object.inactiveButtonClass);
+  }
+
   _toggleButtonState() {
     if (this._hasInvalidInput()) {
-      this._submitButton.setAttribute('disabled', 'true');
-      this._submitButton.classList.add(this._object.inactiveButtonClass);
+      disableSubmitButton()
     } else {
       this._submitButton.classList.remove(this._object.inactiveButtonClass);
       this._submitButton.removeAttribute('disabled');
