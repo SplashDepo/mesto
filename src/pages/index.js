@@ -1,7 +1,8 @@
-import { Card } from './card.js'
-import { initialCards, settingsList } from './settingsInfoList.js'
-import { FormValidator } from './FormValidator.js'
-import { openPopup, closePopupPressEsc, closePopup } from '../utils/utils.js'
+import './index.css'
+import { Card } from '../components/card'
+import { initialCards, settingsList } from '../script/settingsInfoList.js'
+import { FormValidator } from '../components/FormValidator.js'
+import { openPopup, closePopupPressEsc, closePopup } from '../components/utils/utils.js'
 
 const profileEditPopup = document.querySelector('.popup_type_edit')
 const btnOpenEditPopup = document.querySelector('.profile__edit-button')
@@ -73,8 +74,8 @@ function renderUserCards(e) {
   cardPopupForm.reset()
 
   closePopup(cardPopup)
-  cardPopupSubmitBtn.setAttribute('disabled', 'true');
-  cardPopupSubmitBtn.classList.add('popup__button_disabled');
+  this._submitButton.setAttribute('disabled', 'true');
+  this._submitButton.classList.add('popup__button_disabled');
 
 }
 
