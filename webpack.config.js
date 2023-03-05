@@ -65,7 +65,8 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
-  ]
+  ],
+  devtool: 'eval-source-map'
 }
 
 // переписали точку выхода, используя утилиту path
