@@ -33,7 +33,7 @@ const popupEditeProfile = new PopupWithForm('.popup_type_edit', {
 
 popupEditeProfile.setEventListener();
 
-const createCardItem = function (cardData, pic, ik) {
+const createCardItem = function (cardData) {
   const cardItem = new Card(cardData, '#card-template', handleCardClick);
   return cardItem.generateCard();
 }
@@ -50,7 +50,7 @@ renderInitialCards.renderItems();
 const popupAddCard = new PopupWithForm('.popup_type_new-card', {
   callbackFormSubmit: (formValues) => {
     renderInitialCards.addItem(createCardItem({
-      titel: formValues.titel,
+      name: formValues.title,
       link: formValues.link
     }));
     popupAddCard.close();
