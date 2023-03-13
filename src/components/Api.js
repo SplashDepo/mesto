@@ -6,7 +6,7 @@ class Api {
 
   _serverResponse(res) {
     if (res.ok) {
-      return res.json()
+      return res.json();
     } else {
       return Promise.reject(`код ошибки: ${res.status}`);
     }
@@ -15,7 +15,8 @@ class Api {
   getUserData() {
     return fetch(`${this._link}users/me`, {
       headers: this._headers
-    }).then(res => this._serverResponse(res))
+    })
+      .then((res) => { return this._serverResponse(res) })
   }
 
   sendUserData(profileData) {
@@ -23,13 +24,15 @@ class Api {
       headers: this._headers,
       method: 'PATCH',
       body: JSON.stringify({ name: profileData.name, about: profileData.description })
-    }).then(res => this._serverResponse(res))
+    })
+      .then((res) => { return this._serverResponse(res) })
   }
 
   getInitialCards() {
     return fetch(`${this._link}cards`, {
       headers: this._headers
-    }).then(res => this._serverResponse(res))
+    })
+      .then((res) => { return this._serverResponse(res) })
   }
 
   addCard({ name, link }) {
@@ -37,34 +40,41 @@ class Api {
       headers: this._headers,
       method: 'POST',
       body: JSON.stringify({ name, link })
-    }).then(res => this._serverResponse(res))
+    })
+      .then((res) => { return this._serverResponse(res) })
   }
   deleteCard(cardId) {
     return fetch(`${this._link}cards/${cardId}`, {
       headers: this._headers,
       method: 'DELETE'
-    }).then(res => this._serverResponse(res))
+    })
+      .then((res) => { return this._serverResponse(res) })
   }
 
   addCardLike(cardId) {
     return fetch(`${this._link}cards/${cardId}/likes`, {
       headers: this._headers,
       method: 'PUT'
-    }).then(res => this._serverResponse(res))
+    })
+      .then((res) => { return this._serverResponse(res) })
   }
 
   deleteCardLike(cardId) {
     return fetch(`${this._link}cards/${cardId}/likes`, {
       headers: this._headers,
       method: 'DELETE'
-    }).then(res => this._serverResponse(res))
+    })
+      .then((res) => { return this._serverResponse(res) })
   }
 
   sendAvatarData(avatarLink) {
     return fetch(`${this._link}users/me/avatar`, {
       headers: this._headers,
       method: 'PATCH',
-      body: JSON.stringify({ link: avatarLink.link })
-    }).then(res => this._serverResponse(res))
+      body: JSON.stringify({ avatar: avatarLink.avatar })
+    })
+      .then((res) => { return this._serverResponse(res) })
   }
 }
+
+export { Api }

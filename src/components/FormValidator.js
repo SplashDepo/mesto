@@ -6,6 +6,11 @@ class FormValidator {
     this._inputList = Array.from(this._element.querySelectorAll(this._object.inputSelector))
   }
 
+  resetValidate() {
+    this._inputList.forEach(inputItem => this._hideError(inputItem))
+    this._toggleButtonState()
+  }
+
   _showError(inputElement, errorMessage) {
     const errorItem = this._element.querySelector(`.${inputElement.id}-error`)
     errorItem.textContent = errorMessage
@@ -48,18 +53,24 @@ class FormValidator {
     this._setEventListener()
   }
 
-  disableSubmitButton() {
+
+
+  _toggleButtonState() {
+    if (this._hasInvalidInput()) {
+      this._disableSubmitButton()
+    } else {
+      this._enableSubmitButton()
+    }
+  }
+
+  _disableSubmitButton() {
     this._submitButton.setAttribute('disabled', 'true');
     this._submitButton.classList.add(this._object.inactiveButtonClass);
   }
 
-  _toggleButtonState() {
-    if (this._hasInvalidInput()) {
-      this.disableSubmitButton()
-    } else {
-      this._submitButton.classList.remove(this._object.inactiveButtonClass);
-      this._submitButton.removeAttribute('disabled');
-    }
+  _enableSubmitButton() {
+    this._submitButton.classList.remove(this._object.inactiveButtonClass);
+    this._submitButton.removeAttribute('disabled');
   }
 }
 

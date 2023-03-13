@@ -6,6 +6,7 @@ class PopupWithForm extends Popup {
     this._callbackFormSubmit = callbackFormSubmit;
     this._popupForm = this._popupElement.querySelector('.popup__form');
     this._inputList = Array.from(this._popupForm.querySelectorAll('.popup__input'));
+    this._submitBtn = this._popupElement.querySelector('.popup__submit-button');
   }
 
   _getInputValues() {
@@ -22,6 +23,14 @@ class PopupWithForm extends Popup {
       e.preventDefault();
       this._callbackFormSubmit(this._getInputValues());
     });
+  }
+
+  changeSavingProcessText() {
+    this._submitBtn.textContent = 'Сохранение...';
+  }
+
+  returnSavingProcessText() {
+    this._submitBtn.textContent = 'Сохраненить';
   }
 
   close() {
