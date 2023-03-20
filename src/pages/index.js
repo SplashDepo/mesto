@@ -70,7 +70,7 @@ Promise.all([apiConnect.getUserData(), apiConnect.getInitialCards()])
     userId = userProfileData._id;
     userInfo.setUserInfo({ name: userProfileData.name, description: userProfileData.about });
     userInfo.setUserAvatar(userProfileData.avatar);
-    renderInitialCards.renderItems(cardObject);
+    renderInitialCards.renderItems(cardObject.reverse());
   })
   .catch((err) => {
     console.log(`Возникла глобальная ошибка${err}`)

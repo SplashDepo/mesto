@@ -50,6 +50,7 @@ class Card {
 
   deleteCard() {
     this._cardElement.remove();
+    this._cardElement = null;
   }
 
   generateCard() {
